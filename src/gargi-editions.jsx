@@ -332,7 +332,7 @@ const FOUNDERS = [
   {
     avatarClass: "b",
     avatarLetter: "B",
-    name: "Bhawik",
+    name: "Bhawik Birha",
     role: "Sales Co-founder",
     desc: "Handles all client relationships — discovery calls, proposals, onboarding, and ongoing communication. If you've spoken to gargi.ai, you've spoken to him."
   }
