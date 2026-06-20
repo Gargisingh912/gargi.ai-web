@@ -34,26 +34,6 @@ function ServiceCard({ icon, title, desc, tag, isFeatured, badgeText }) {
   );
 }
 
-function PackageCard({ name, price, retainer, features, isFeatured, badgeText, ctaText, ctaLink }) {
-  return (
-    <div className={`pkg ${isFeatured ? "featured" : ""}`}>
-      {isFeatured && badgeText && <span className="pkg-badge">{badgeText}</span>}
-      <div className="pkg-name">{name}</div>
-      <div className="pkg-price">{price}<span> one-time</span></div>
-      <div className="pkg-retainer">{retainer}</div>
-      <div className="pkg-divider"></div>
-      <ul className="pkg-features">
-        {features.map((feature, i) => (
-          <li key={i} className={i === 0 ? "strong" : ""}>{feature}</li>
-        ))}
-      </ul>
-      <a href={ctaLink} className={`pkg-cta ${isFeatured ? "filled" : "outline"}`}>
-        {ctaText}
-      </a>
-    </div>
-  );
-}
-
 function StackItem({ icon, title, desc }) {
   return (
     <div className="stack-item">
@@ -235,62 +215,6 @@ const SERVICES = [
     tag: "CRM · n8n · Claude · WhatsApp"
   }
 ];
-
-const PACKAGES = [
-  {
-    name: "Starter",
-    price: "₹75,000",
-    retainer: "+ ₹8,000/month retainer",
-    features: [
-      "One automation system of your choice",
-      "2-week delivery timeline",
-      "3-month minimum retainer",
-      "WhatsApp or email delivery surface",
-      "Training session + handover docs",
-      "Monthly monitoring and maintenance"
-    ],
-    isFeatured: false,
-    ctaText: "Get Started →",
-    ctaLink: "#cta"
-  },
-  {
-    name: "Growth",
-    price: "₹1,75,000",
-    retainer: "+ ₹20,000/month retainer",
-    features: [
-      "Two systems bundled (e.g. Lead Qualifier + WhatsApp Bot)",
-      "4-week delivery timeline",
-      "6-month minimum retainer",
-      "WhatsApp + web chat delivery",
-      "Live dashboard included",
-      "Monthly strategy call with founders",
-      "Priority support response"
-    ],
-    isFeatured: true,
-    badgeText: "BEST VALUE",
-    ctaText: "Get Started →",
-    ctaLink: "#cta"
-  },
-  {
-    name: "Scale",
-    price: "₹3,50,000",
-    retainer: "+ ₹40,000/month retainer",
-    features: [
-      "Full operations stack — 4+ systems",
-      "Sales pipeline + WhatsApp automation",
-      "Live business dashboard + daily brief",
-      "Voice AI receptionist",
-      "8-week delivery timeline",
-      "12-month retainer",
-      "Dedicated monthly ops review",
-      "New workflow added every quarter"
-    ],
-    isFeatured: false,
-    ctaText: "Get Started →",
-    ctaLink: "#cta"
-  }
-];
-
 const STACK_PILLS = [
   { text: "n8n", isLime: true },
   { text: "Claude AI", isLime: true },
@@ -462,7 +386,6 @@ export default function App() {
         <a href="#" className="nav-logo">gargi<span>.ai</span></a>
         <div className="nav-links">
           <a href="#services">Services</a>
-          <a href="#packages">Pricing</a>
           <a href="#verticals">Industries</a>
           <a href="#about">About</a>
           <a href="#cta" className="nav-cta">Book Free Audit →</a>
@@ -563,22 +486,6 @@ export default function App() {
           <div className="services-grid">
             {SERVICES.map((srv, i) => (
               <ServiceCard key={i} {...srv} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PACKAGES */}
-      <section id="packages">
-        <div className="container">
-          <div className="packages-header">
-            <span className="section-eyebrow">Pricing</span>
-            <h2>Transparent pricing. No surprises.</h2>
-            <p>Every package includes a fixed-price build and an ongoing retainer so the system keeps working as your business changes.</p>
-          </div>
-          <div className="packages-grid">
-            {PACKAGES.map((pkg, i) => (
-              <PackageCard key={i} {...pkg} />
             ))}
           </div>
         </div>
@@ -706,7 +613,6 @@ export default function App() {
           <div className="footer-logo">gargi<span>.ai</span></div>
           <div className="footer-links">
             <a href="#services">Services</a>
-            <a href="#packages">Pricing</a>
             <a href="#verticals">Industries</a>
             <a href="#gaia">GAIA Framework</a>
             <a href="#about">About</a>
